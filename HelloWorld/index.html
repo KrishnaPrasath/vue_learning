@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VueJS</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{message}} <!-- Template Syntax -->
+            <br>
+            <span v-if="seen">Now you see me</span>
+            <ol>
+                <todo-item
+                    v-for="item in todo"
+                    v-bind:todo="item"
+                    v-bind:key="item.key">
+                </todo-item> <!-- Component -->
+            </ol>
+            
+        </div>
+        <div id="li">
+            <ol>
+                <li v-for="ele in arr">
+                    {{ele.text}}
+                </li>
+            </ol>
+        </div>
+
+        <div id="btn">
+            <p>{{message}}</p>
+            <button role="button" v-on:click="click">Click me</button>
+        </div>
+
+        <div id="model">
+            <p>{{message}}</p>
+            <input type="text" v-model="message">
+        </div>
+
+        
+    </body>
+    <script src="index.js"></script>
+</html>
